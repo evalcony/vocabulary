@@ -1,7 +1,6 @@
 import os
 import random
 import string
-import argparse
 
 # 默认每次显示单词数量
 default_num = 10
