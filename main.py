@@ -1,6 +1,10 @@
 import os
 import random
 import string
+import argparse
+
+# 默认每次显示单词数量
+default_num = 10
 
 def split():
     lines = read_file('/words-repo/tofel-words.txt')
@@ -59,9 +63,17 @@ def get_rand_word():
     if len(lines) == 0:
         print('')
         return
-    idx = random.randint(1, len(lines))
-    w = lines[idx-1]
-    print(w)
+    cache = set()
+    for i in range(default_num):
+        idx = random.randint(1, len(lines))
+        if idx in cache:
+            i = i-1
+            continue
+        else:
+            cache.add(idx)
+
+        w = lines[idx-1]
+        print(w)
 
 if __name__ == '__main__':
     get_rand_word()
