@@ -9,6 +9,7 @@ default_num = 10
 def split():
     lines = read_file('/words-repo/tofel-words.txt')
 
+    # 排序
     lines.sort(key=str.lower)
 
     r = []
@@ -16,7 +17,8 @@ def split():
 
     for l in lines:
         if l[0] != cur_alpha:
-            write_file('tofel/', cur_alpha+'.txt', r)
+            if len(r) != 0:
+                write_file('tofel/', cur_alpha+'.txt', r)
             cur_alpha = l[0]
             r = []
         r.append(l)
@@ -59,7 +61,8 @@ def get_random_letter():
   return rand_letter
 
 def get_rand_word():
-    lines = read_file('/words-repo/split/tofel/'+get_random_letter()+'.txt')
+    filename = get_random_letter() + '.txt'
+    lines = read_file('/words-repo/split/tofel/'+filename)
     if len(lines) == 0:
         print('')
         return
