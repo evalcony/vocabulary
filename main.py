@@ -3,7 +3,7 @@ import random
 import string
 
 def split():
-    lines = read_file('/words-repo/wangyumei-toefl-words.txt')
+    lines = read_file('/words-repo/tofel-words.txt')
 
     lines.sort(key=str.lower)
 
