@@ -18,8 +18,6 @@ mem vocabulary in terminal
 python3 main.py
 ```
 
-`default_num` 表示每次默认返回几个单词。
-
 例如，在 `.zprofile` 中配置alias
 ```
 alias abc='python3 ~/coding/py-proj/vocabulary/main.py'
